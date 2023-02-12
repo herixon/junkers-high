@@ -27,7 +27,9 @@
         <main class="py-4 mb-5">
             @yield('content')
         </main>
-        
+        <!--footer定義-->
+        <!--@component('components.footer')
+        @endcomponent-->
     </div>
 </body>
 </html>
