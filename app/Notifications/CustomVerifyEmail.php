@@ -42,9 +42,13 @@ class CustomVerifyEmail extends VerifyEmail
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        ->line(__('Verify Your Email Address'))
+        ->action(__('Verify Email Address'), $this->verificationUrl($notifiable))
+        ->line(__('If you did not create an account, no further action is required.'));
+}
+
+// 後略
+
     }
 
     /**
@@ -53,10 +57,10 @@ class CustomVerifyEmail extends VerifyEmail
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
-    {
+    /*public function toArray($notifiable){
         return [
             //
         ];
-    }
-}
+    }*/
+
+
